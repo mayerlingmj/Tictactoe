@@ -1,4 +1,23 @@
-const cells = document.querySelectorAll('.cell')
+const boardContainer = document.getElementById('board')
+const congratulationsPopup = document.getElementById('congratulationsPopup')
+const winnerText = document.getElementById('winnerText')
+const cells = []
+
+function initializeGame() {
+  cells.length = 0
+  gameEnded = false
+  currentPlayer = 'X'
+  boardContainer.innerHTML = ''
+
+  for (let i = 0; i < 9; i++) {
+    const cell = document.createElement('div')
+    cell.className = 'cell'
+    cell.addEventListener('click', handleCellClick)
+    cells.push(cell)
+    boardContainer.appendChild(cell)
+  }
+}
+
 let currentPlayer = 'X'
 let gameEnded = false
 
@@ -25,21 +44,35 @@ function checkDraw() {
 
 function endGame(result) {
   gameEnded = true
-  alert(result)
+  winnerText.textContent = result
+  congratulationsPopup.style.display = 'block'
 }
 
-cells.forEach((cell) => {
-  cell.addEventListener('click', () => {
-    if (!cell.textContent && !gameEnded) {
-      cell.textContent = currentPlayer
+function handleCellClick(event) {
+  const cell = event.target
 
-      if (checkWin(currentPlayer)) {
-        endGame(`Player ${currentPlayer} wins!`)
-      } else if (checkDraw()) {
-        endGame("It's a draw!")
-      } else {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
-      }
+  if (!cell.textContent && !gameEnded) {
+    cell.textContent = currentPlayer
+
+    if (checkWin(currentPlayer)) {
+      endGame(`Player ${currentPlayer} wins!`)
+    } else if (checkDraw()) {
+      endGame("It's a draw!")
+    } else {
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X'
     }
-  })
+  }
+}
+
+function restart() {
+  initializeGame()
+  congratulationsPopup.style.display = 'none'
+}
+
+// Initialize the game when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search)
+  if (urlParams.get('startGame') === 'true') {
+    initializeGame()
+  }
 })

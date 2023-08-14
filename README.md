@@ -1,4 +1,4 @@
-# Tictactoe
+# Tic Tac Toe
 
 ### Date: 08/14/23
 
