@@ -69,7 +69,6 @@ function restart() {
   congratulationsPopup.style.display = 'none'
 }
 
-// Initialize the game when the page loads
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search)
   if (urlParams.get('startGame') === 'true') {

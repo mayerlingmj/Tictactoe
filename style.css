@@ -1,10 +1,11 @@
 body {
-  background-color: #ffefed;
+  background-color: #fbd0e7;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
+  position: relative;
 }
 
 .board {
@@ -15,6 +16,19 @@ body {
   padding: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  top: 50px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffcedb;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #e75480;
 }
 
 .cell {

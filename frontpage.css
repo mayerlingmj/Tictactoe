@@ -1,5 +1,5 @@
 body {
-  background-color: #fdeff2;
+  background-color: #eecddd;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,18 +9,18 @@ body {
 
 .frontpage {
   text-align: center;
-  background-color: #ffcedb;
+  background-color: rgb(246, 164, 205);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .frontpage h1 {
-  color: #e75480;
+  color: #f5008f;
 }
 
 .frontpage p {
-  color: #ff7f9c;
+  color: #e51197;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -33,7 +33,7 @@ body {
 }
 
 .frontpage li {
-  color: #ff7f9c;
+  color: #e51197;
   margin-bottom: 10px;
 }
 
