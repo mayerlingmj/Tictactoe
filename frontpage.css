@@ -1,5 +1,7 @@
 body {
   background-color: #eecddd;
+  background-image: url('images/marble1.png');
+  background-size: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +11,7 @@ body {
 
 .frontpage {
   text-align: center;
-  background-color: rgb(246, 164, 205);
+  background-color: rgb(239, 200, 220);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
